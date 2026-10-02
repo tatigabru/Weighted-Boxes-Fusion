@@ -84,6 +84,10 @@ There is support for 1D line segments in WBF method with `weighted_boxes_fusion_
 
 There is support for rotated (oriented) boxes in WBF method with `weighted_boxes_fusion_rotated` function. Each box is `(cx, cy, w, h, angle)` with `cx, cy, w, h` normalized to [0; 1], and `angle` in degrees using the le90 (long-edge 90) convention from MMRotate: angle in [-90, 90), with `w` always the longer edge. Check example of usage in [example_rotated.py](examples/example_rotated.py).
 
+#### Quadrangle version
+
+The alternative 4-vertex declaration `(x1, y1, x2, y2, x3, y3, x4, y4)` used by annotation formats like DOTA and HRSC2016 is supported with `weighted_boxes_fusion_quadrangle` function. All 8 coordinates are normalized to [0; 1]; vertices may be given in any order/winding and are canonically re-ordered internally before fusion. Check example of usage in [example_quadrangle.py](examples/example_quadrangle.py).
+
 ## Benchmarks
 
 * Benchmark for [Open Images Dataset (5 models)](benchmark_oid/README.md)
